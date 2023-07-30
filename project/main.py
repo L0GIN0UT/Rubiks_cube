@@ -56,18 +56,58 @@ print(side_1, side_2, side_3, side_4, side_5, side_6)
 # В кубике рубика центры не двигаются 
 
 #angle = (x,y,z и 3 цвета) цвета беруться из сторон
+# верхний слой
+angle_1 = ('x,y,z', side_1[0][0], side_4[0][0], side_6[2][0]) # ┍ вид сверху
+edge_1 = ('x,y,z', side_1[0][1], None, side_6[2][1]) # ┍┑ вид сверху
+angle_2 = ('x,y,z', side_1[0][2], side_3[0][2], side_6[2][2]) # ┑ вид сверху ((верх/низ)(лево/право)(перед/зад))
 
-angle_1 = ('x,y,z', side_1[0][0] , side_4[0][0], side_6[2][0]) # ┍ вид сверху
-angle_2 = ('x,y,z', side_1[0][2] , side_3[0][2], side_6[2][2]) # ┑ вид сверху
-angle_3 = ('x,y,z', side_1[2][0] , side_4[0][2], side_2[0][0]) # ┕ вид сверху
-angle_4 = ('x,y,z', side_1[2][2] , side_3[0][0], side_2[0][2]) # ┚ вид сверху
-# 4 угла сверху
-angle_5 = ('x,y,z', side_5[0][0] , side_4[2][2], side_2[2][0]) # ┍ вид сверху
-angle_6 = ('x,y,z', side_5[0][2] , side_3[2][0], side_2[2][2]) # ┑ вид сверху
-angle_7 = ('x,y,z', side_5[2][0] , side_4[2][0], side_6[0][0]) # ┕ вид сверху
-angle_8 = ('x,y,z', side_5[2][2] , side_3[2][2], side_6[0][2]) # ┚ вид сверху
+edge_2 = ('x,y,z', side_1[1][0], side_4[0][1], None)
+center_1 = ('x,y,z', side_1[1][1], None, None)
+edge_3 = ('x,y,z', side_1[1][2], side_3[0][1], None)
 
-print(angle_1, angle_2, angle_3, angle_4, angle_5, angle_6, angle_7, angle_8)
+angle_3 = ('x,y,z', side_1[2][0], side_4[0][2], side_2[0][0]) # ┕ вид сверху
+edge_4 = ('x,y,z', side_1[2][1], None, side_2[0][1])
+angle_4 = ('x,y,z', side_1[2][2], side_3[0][0], side_2[0][2]) # ┚ вид сверху
+
+
+# Средний слой
+edge_5 = ('x,y,z', None, side_4[1][0], side_6[1][0])
+center_6 = ('x,y,z', None, None,side_6[1][1])
+edge_6 = ('x,y,z', None, side_3[1][2], side_6[1][2])
+
+center_4 = ('x,y,z', None, side_4[1][1], None)
+# пустота
+center_3 = ('x,y,z', None, side_3[1][1], None)
+
+edge_7 = ('x,y,z', None, side_4[1][2], side_2[1][0])
+center_2 = ('x,y,z', None, None,side_2[1][1])
+edge_8 = ('x,y,z', None, side_3[1][0], side_2[1][2]) 
+
+
+# Нижний слой
+angle_5 = ('x,y,z', side_5[2][0], side_4[2][0], side_6[0][0]) # ((верх/низ)(лево/право)(перед/зад))
+edge_9 = ('x,y,z', side_5[2][1], None, side_6[0][1])
+angle_6 = ('x,y,z', side_5[2][2], side_3[2][2], side_6[0][2])
+
+edge_10 = ('x,y,z', side_5[1][0], side_4[2][1], None)
+center_5 = ('x,y,z', side_5[1][1], None, None)
+edge_11 = ('x,y,z', side_5[1][2], side_3[2][1], None)
+
+angle_7 = ('x,y,z', side_5[0][0], side_4[2][2], side_2[2][0])
+edge_12 = ('x,y,z', side_5[0][1], None, side_2[2][1])
+angle_8 = ('x,y,z', side_5[0][2], side_3[2][0], side_2[2][2])
+
+print('Верхний слой:')
+print(angle_1, edge_1, angle_2, edge_2, center_1, edge_3, angle_3, edge_4, angle_4)
+print('Средний слой:')
+print(edge_5, center_6, edge_6, center_4, center_3, edge_7, center_2, edge_8)
+print('Нижний слой:')
+print(angle_5, edge_9, angle_6, edge_10, center_5, edge_11, angle_7, edge_12, angle_8)
 
 # edge = ('x,y,z',side_1[0][0], None , side_6[2][0] )
 # так может принимать данные ребро тк 2 цвета и центр будет принимать 1 значение
+
+# import numpy as np  # Идем снизу вверх
+# def create_cube():
+
+    
